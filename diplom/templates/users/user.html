@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+    <h1>
+        Страница авторизации
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <div class="users">
+        <form method="post" class="form-register auth">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <button class="btn-success btnuser" type="submit">Войти</button>
+                <br><br><hr><br>
+                <p class="comment">Забыли пароль? <a href="{% url 'pass-reset' %}">Получить новый</a></p>  
+            </div>            
+
+        </form>
+    </div>
+{% endblock %}

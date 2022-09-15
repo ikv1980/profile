@@ -1,0 +1,176 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+    <h1>
+      {{ title }}
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="tabs">
+            <input type="radio" name="inset" value="" id="ru" checked>
+            <label for="ru">RU</label>
+        
+            <input type="radio" name="inset" value="" id="en">
+            <label for="en">EN</label>
+
+            <!-- Резюме на русском языке -->
+            <div id="txt_1">
+                <!-- Фотография -->
+                <div style="max-width: 160px;">
+                    <img src="../media/user_images/pp.jpeg" alt="Фото">
+                </div>
+                <!-- Контактные данные -->
+                <div>
+                    <table>
+                        <td>
+                            <tr>
+                                <td class="w3"><h4>ФИО:</h4></td>
+                                <td>Иванов Константин</td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>ДР:</h4></td>
+                                <td>31.03.1980</td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>Телефон:</h4></td>
+                                <td>+79855098044, +79924288882</td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>e-mail:</h4></td>
+                                <td><a href=" mailto:ikv1980@gmail.com">ikv1980@gmail.com</a></td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>GitHub:</h4></td>
+                                <td><a href="https://github.com/ikv1980" target="_blank">https://github.com/ikv1980</a></td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>Город:</h4></td>
+                                <td>Москва</td>
+                            </tr>
+                        </td>
+                    </table>
+                </div>
+                <!-- Опыт работы -->
+                <div class="w100">
+                    <h3>Опыт работы:</h3>
+                    <hr>
+                    <ul>
+                        <li>Основной вид деятельности - проектирование систем автоматизации. Являюсь инженером с 20-летним стажем работы.</li>
+                        <li>Параллельно основной деятельности занимался работой на фрилансе. В основном это написание сайтов как с нуля, так и на основе готовых движков Wordpress, Joomla. Последние три года изучаю Python, HTML5, CSS (CSS3), Java Script</li>
+                        <li>Являюсь партнером ГБПОУ Московского автомобильно-дорожного колледжа имени А. А. Николаева. 
+                            В частности студенты специальностей "Информационные системы и программирование" неоднократно проходили практику под моим руководством.
+                            В процессе практики разрабатывались различные програмные продукты (программа тестирования, CRM-системы, программа анализа движения тренспорта, 
+                            ПО для удаленной тарировки топливного бака и прочее).</li>
+                    </ul>
+                </div> 
+                <!-- Описательная часть резюме -->
+                <div class="w100">
+                    <h3>Ключевые знания и навыки:</h3>
+                    <hr>
+                    <ul>
+                        <li>Знания языка Python;</li>
+                        <li>Понимание принципов ООП;</li>
+                        <li>Знание языка SQL и работа с СУБД SQLite, MySQL<!-- , PostgresSQL, Oracle -->;</li>
+                        <li>Умение работать с консолью (Bash, PowerShwell);</li>
+                        <li>Работа с фреймворками Kivy, TKinter (создание простых приложений);</li>
+                        <li>Работа с Git, а также GitHub;</li>
+                        <li>Разработка проектов разной сложности на основе Python Django;</li>
+                        <li>Понимание документации API, опыт описания REST API;</li>
+                        <li>Понимание принципов тестирования программ (unittest, pytest).</li>
+                    </ul>
+                </div>
+                <div class="w100">
+                    <h3>Дополнительные знания:</h3>
+                    <hr>
+                    <ul>
+                        <li>HTML (HTML5), CSS (CSS3);</li>
+                        <li>JavaScript, jQuery, VueJS;</li>
+                        <li>Фреймворк Bootstrap;</li>
+                        <li>Кроссбраузерная и кроссплатформенная верстка;</li>
+                    </ul>
+                </div> 
+                <div class="w100">
+                    <h3>Знание языков:</h3>
+                    <hr>
+                    <ul>
+                        <li>Русский – родной;</li>
+                        <li>Английский – средний (чтение технической литературы);</li>                   
+                    </ul>
+                </div> 
+                <div class="w100">
+                    <h3>Образование:</h3>
+                    <hr>
+                    <ul>
+                        <li>
+                            <p><b>Курганский государственный университет (1998 - 2004)</b></p>
+                            <p>Автоматизация Технологических Процессов и Производств, Инженер</p>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="w100">
+                    <h3>Повышение квалификации, курсы:</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="https://coursera.org/share/ca5103f483f690967ca0050624d0c8cd" target="_blank">"Google IT Automation with Python" (Google)</a></li>
+                        <li><a href="https://coursera.org/share/b9695116d4552dbca4376fd43ec1315c" target="_blank">Google IT Support (Google)</a></li>
+                        <li><a href="https://itproger.com/view-diplom/898a6a2a4d59e0beb1fece7ad99f80ff/python" target="_blank">"Профессия Python разработчик" (itProger)</a></li>
+                    </ul>
+                </div>      
+                <div class="w100">
+                    <h3>Обо мне:</h3>
+                    <hr>
+                    <ul>
+                        <li>Умение быстро разбирать чужой код;</li>
+                        <li>Умение осваивать новые технологии за короткие сроки;</li>
+                        <li>Нацеленность на результат, системный подход;</li>
+                        <li>Ответственное отношение к работе;</li>
+                        <li>Коммуникабельность, исполнительность, внимание к деталям.</li>
+                    </ul>
+                </div> 
+
+                 
+            </div>
+            <!-- Резюме на английском языке -->
+            <div id="txt_2">
+                <!-- Фотография -->
+                <div style="max-width: 160px;">
+                    <img src="../media/user_images/pp.jpeg" alt="Фото">
+                </div>
+                <!-- Контактные данные -->
+                <div>
+                    <table>
+                        <td>
+                            <tr>
+                                <td class="w3"><h4>Full name:</h4></td>
+                                <td>Ivanov Konstantin</td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>Birthday:</h4></td>
+                                <td>31.03.1980</td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>Phones:</h4></td>
+                                <td>+79855098044, +79924288882</td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>e-mail:</h4></td>
+                                <td><a href=" mailto:ikv1980@gmail.com">ikv1980@gmail.com</a></td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>GitHub:</h4></td>
+                                <td><a href="https://github.com/ikv1980" target="_blank">https://github.com/ikv1980</a></td>
+                            </tr>
+                            <tr>
+                                <td class="w3"><h4>Sity:</h4></td>
+                                <td>Moscow</td>
+                            </tr>
+                        </td>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

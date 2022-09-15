@@ -1,0 +1,131 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" type="image/png" href="../media/favicon.ico"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <!-- Для работы с картинками -->
+    <!-- <link rel="stylesheet" href="{% static 'css/colorbox.css' %}"> -->
+</head>
+<body>
+  <!-- Шапка сайта, состоящая из двух горизонтальных меню -->
+  <div class="menu01">
+    <div class="container">
+      <a href="{% url 'home' %}"><img src="../media/logo.png" class="logo-img" alt="Logo"></a>
+      <div class="usermenu">
+        {% if not user.is_authenticated %}
+        <a href="{% url 'reg' %}">
+          <button class="btn-warning btnuser">Регистрация</button>
+        </a>
+        <a href="{% url 'user' %}">
+          <button class="btn-success btnuser">Войти</button>
+        </a>
+        {% else %}
+        <a href="{% url 'profile' %}">
+          <button class="btn-warning btnuser">Профиль</button>
+        </a>
+        <a href="{% url 'exit' %}">
+          <button class="btn-danger btnuser">Выйти</button>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="menu02 sticky">
+    <div class="container">
+      <nav>
+        {% if user.is_authenticated %}
+          <a href="{% url 'home' %}">Главная</a>
+          <a href="{% url 'about' %}">Резюме</a>
+          <a href="{% url 'education' %}">Учёба</a>
+          <a href="{% url 'project' %}">Проекты</a>
+          <!-- <a href="{% url 'link' %}">Ссылки</a> -->
+        {% else %}
+          <a href="{% url 'home' %}">Главная</a>
+          <a href="{% url 'about' %}">Резюме</a>
+          <a href="{% url 'education' %}">Учёба</a>
+          <a href="{% url 'project' %}">Проекты</a>
+        {% endif %}
+      </nav>      
+    </div>
+  </div>
+  <div class="menu03">
+    <a href="{% url 'home' %}"><img src="../media/logo.png" class="logo-img" alt="Logo"></a>
+    <nav class="nav_menu03">
+        <ul id="showmenu">
+            {% if user.is_authenticated %}
+              <a href="{% url 'home' %}" class=""><li>Главная</li></a>
+              <a href="{% url 'about' %}" class=""><li>Резюме</li></a>
+              <a href="{% url 'education' %}"><li>Учёба</li></a>
+              <a href="{% url 'project' %}" class=""><li>Проекты</li></a>
+            {% else %}
+              <a href="{% url 'home' %}" class=""><li>Главная</li></a>
+              <a href="{% url 'about' %}" class=""><li>Резюме</li></a>
+              <a href="{% url 'education' %}"><li>Учёба</li></a>
+              <a href="{% url 'project' %}" class=""><li>Проекты</li></a>
+            {% endif %}
+            <hr><hr>
+            {% if not user.is_authenticated %}
+            <a href="{% url 'reg' %}"><li style="background: #ffc107;">Регистрация</li></a>
+            <a href="{% url 'user' %}"><li style="background: #157347;">Войти</li></a>
+            {% else %}
+            <a href="{% url 'profile' %}"><li style="background: #ffc107;">Профиль</li></a>
+            <a href="{% url 'exit' %}"><li style="background: #BB2D3B;">Выйти</li></a>
+            {% endif %}
+        </ul>
+    </nav>
+    <i class="fa-solid fa-angles-down menuUD" id="down"></i>
+    <i class="fa-solid fa-angles-up menuUD" id="up"></i>
+  </div>
+
+  <!-- Модуль вывода информационных сообщений -->
+  <div>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li 
+        {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {{ message }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  <!-- Тело сайта -->
+    <main>
+      <div class="container">
+        {% block title %}
+        {% endblock %}   
+        {% block content %}
+        {% endblock %}  
+      </div>  
+    </main>
+  
+  <!-- Подвал сайта -->
+  <footer class="">
+    <div class="container">
+      <p>© Права защищены 2022</p>
+      <div>
+        <a href="https://www.facebook.com/ikv1980/" target="_blank"><i class="social fa-brands fa-facebook-square shadow-text"></i>
+        <a href="https://vk.com/tomware" target="_blank"><i class="social fa-brands fa-vk shadow-text"></i>
+        <a href="https://www.linkedin.com/in/konstantin-ivanov-3279a17b/" target="_blank"><i class="social fa-brands fa-linkedin shadow-text"></i></a>
+      </div>      
+    </div>
+  </footer>
+<!-- скрипт jquery -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+<!-- Скрипт для работы с картинками -->
+<script src="{% static 'js/jquery.colorbox-min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/colorbox.css">
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

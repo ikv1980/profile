@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.menu01, 
+.menu02 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    padding: 10px 0px;
+    background: #BB2D3B;
+    -webkit-box-shadow: 0px 7px 5px -5px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 7px 5px -5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 7px 5px -5px rgba(0, 0, 0, 0.6);
+}
+
+.menu02 {
+    background: #ffa000;
+}
+
+.menu02 .container {
+    justify-content: end;
+}
+
+
+/* Будем присваивать этот класс, чтобы блок прилипал */
+.sticky {
+    position: sticky;
+    top: 0;
+    min-height: 2em;
+  }
+
+/* Форма уведомлений */
+.messages li.error { background: #f24c4cbf; padding: 10px 10px; text-align: center; font-weight: 400; text-decoration: none;}
+.messages li.success { background: #69f7b5bf; padding: 10px 10px; text-align: center; font-weight: 400; text-decoration: none;}
+
+/* Стили для пунктов меню - - - - - - - - - - - - - - - - - - - - - - - */
+.menu02 a,
+.logo a {
+    margin: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.menu02 a {
+    margin: 0px 10px;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-top: 1px solid #cc302b;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: 0px 7px 5px -5px rgb(0 0 0 / 60%);
+    transition: background-color .3s ease;
+}
+
+.menu02 a:hover {
+    background-color: #c04223;
+}
+
+.menu02 a:active {
+    /* color: #198754; */
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 60%);
+}
+
+.usermenu a {
+    text-decoration: none;
+}
+
+/* Стили для кнопок меню - - - - - - - - - - - - - - - - - - - - - - - */
+.btnuser,
+.form-register button {
+    background-color: #ffffe2;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    -webkit-box-shadow: 0px 2px 2px 2px rgba(34, 60, 80, 0.5);
+    -moz-box-shadow: 0px 2px 2px 2px rgba(34, 60, 80, 0.5);
+    box-shadow: 0px 2px 2px 2px rgba(34, 60, 80, 0.5);
+}
+
+.btn-warning {color: #000; border-color: #ffc107; min-width: 130px;}
+.btn-success {color: #157347; border-color: #157347; min-width: 130px;}
+.btn-danger {color: #BB2D3B; border-color: #BB2D3B; min-width: 130px;}
+
+.btn-warning:hover {color: #fff; background-color: #ffc107; border-color: #ffc107;}
+.btn-success:hover {color: #fff; background-color: #157347; border-color: #157347;}
+.btn-danger:hover {color: #fff; background-color: #BB2D3B; border-color: #BB2D3B;}
+
+.btnuser:active {
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+/* Стили для тела сайта - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 50px;
+}
+
+.users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+main .container {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.users p {margin-bottom: 3px;}
+
+.users .btn-danger {
+    padding: 10px 20px;
+    color: #fff; 
+    background-color: #BB2D3B; 
+    border-color: #BB2D3B;
+}
+
+.users .btn-success,
+.about .btn-success {
+    padding: 10px 20px;
+    color: #fff; 
+    background-color: #157347; 
+    border-color: #157347;
+}
+
+.users .btn-danger:hover {color: #fff; border-color: #BB2D3B;}
+.users .btn-success:hover {color: #fff; border-color: #157347;}
+.about .btn-success:hover {color: #fff; border-color: #157347;}
+
+/* Стили для подвала сайта - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    color: #FFF;
+    font-weight: bold;
+    bottom: 0px;
+    width: 100%;
+    padding: 10px 0px;
+    background: #BB2D3B;
+    -webkit-box-shadow: 0px -7px 5px -5px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px -7px 5px -5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px -7px 5px -5px rgba(0, 0, 0, 0.6);
+}
+
+.social {
+    margin: 0 5px;
+    font-size: 35px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Стили для форм - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+/* Стили для комментариев */
+
+
+.form-register {
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #3d90ce;
+    box-shadow: 5px 5px 5px -2px rgb(0 0 0 / 60%);
+    width: 80%;
+    min-width: 210px;
+    max-width: 580px;
+}
+
+.form-register > p {
+    text-align: start;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 95%;
+}
+    
+.form-register ul.errorlist {
+    color: #ff0000;
+    list-style-type: none;
+    padding-bottom: 7px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+}
+  
+.form-register p input,
+.form-register p textarea {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
+  
+.form-register .helptext {
+    color: #949494;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+  
+.auth input,
+.form-register p input,
+.form-register p textarea {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid #ced4da;
+  padding: .45rem .75rem;
+  border-radius: .25rem;
+}
+  
+.auth input:focus,
+.form-register input:focus,
+.form-register textarea:focus,
+.form-register textarea:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0px 0px 1px 3px rgba(44, 140, 214, 0.4);
+}
+
+.auth ul {
+  text-align: start;
+  list-style: none;
+}
+.form-register button {
+  min-width: 120px;
+}
+hr {
+    border: none;
+    color: #3d90ce;
+    background-color: #3d90ce;
+    height: 1px;
+   }
+.comment {
+    font-size: 14px; 
+    font-weight: 500 !important;
+    margin-bottom: 5px;
+}
+.about {
+    padding: 15px 15px;
+    margin-top: 10px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    width: 80%;
+    line-height: 170%;
+    text-align: justify;
+}
+.link {
+    font-size: 16px;
+    font-weight: 300px;
+    text-align: start;
+    margin: 2px;
+}
+.general {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+.form-register label[for=id_agreement] {
+    width: 90%;
+}
+.form-register input[type=checkbox] {
+    width: 15px;
+    display: inline;
+    margin: 3px 5px;
+}
+
+summary {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+#linkCount {
+    color: white;
+    background-color: #157347;
+    border-radius: 5px;
+    padding: 1px 10px;
+}
+
+#links {
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 210px;
+    max-width: 620px;
+}
+
+#links div p {
+    margin-top: 7px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    padding: 2px 8px;
+}
+
+#links div p span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+}
+#delete {
+    float: right;
+    cursor: pointer;
+}
+
+.shadow-text{
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+.shadow-text:hover {
+    color: #ffa000;
+    -webkit-text-shadow: 2px 2px 2px #000;
+    -moz-text-shadow: 2px 2px 2px #000;
+        text-shadow: 2px 2px 2px #000;
+}
+
+#flex {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    width: 85%;
+}
+#flex div {
+    width: 90%;
+    border: 1px solid #87909c;
+    border-bottom: white;
+    border-radius: 30px;
+    margin: 15px;
+}
+#flex img {width: 100%;}
+
+/* Стили для Резюме - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+.tabs { width: 100%; padding: 0px; margin: 0 auto; text-align: start;}
+.tabs>input { display: none; }
+.tabs>div {
+    display: none;
+    padding: 12px;
+    border: 1px solid #C0C0C0;
+    background: #FFFFFF;
+    border-radius: 0px 5px 5px 5px;
+}
+.tabs>label {
+    display: inline-block;
+    padding: 7px;
+    margin: 0 -5px -1px 0;
+    text-align: center;
+    color: #666666;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px 5px 0px 0px;
+    background: #E0E0E0;
+    cursor: pointer;
+}
+.tabs>input:checked + label {
+    color: #000000;
+    border: 1px solid #C0C0C0;
+    border-bottom: 1px solid #FFFFFF;
+    background: #FFFFFF;
+}
+
+#ru:checked ~ #txt_1,
+#en:checked ~ #txt_2 { 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+tbody {vertical-align: top;}
+
+#txt_1 div, #txt_2 div {padding: 10px;}
+
+#txt_1 div img, #txt_2 div img {max-width: 150px; border-radius: 75px;}
+
+#txt-1 table, #txt-2 table {width: 100%;}
+
+#txt_1 tr, #txt_2 tr {padding-bottom: 3px;}
+
+#txt_1 ul, #txt_2 ul {
+    list-style-type: disc; 
+    padding-left: 30px;
+}
+
+#txt_1 ul li, #txt_2 ul li {padding-top: 5px;}
+
+.w3 {width: 110px;}
+
+.w100 {width: 100%;}
+
+/* Стили для Сертификатов - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+#education {
+    display: flex;
+    /* width: 85%; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+#education>div {
+    width: 22%;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid #b2b2b2;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+#education img {
+    max-width: 100%;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+@media(max-width: 1400px) {
+    #education>div {width: 28%;}
+}
+
+@media(max-width: 1000px) {
+    .container {width: 95%;}
+    #flex div {border-radius: 20px;}
+    #education>div {width: 25%;}
+}
+
+@media(max-width: 700px) {
+    .menu02 a {margin: 0px 10px;}
+    #flex div {border: 0px;}
+    #education>div {width: 40%;}
+}
+
+@media(max-width: 550px) {
+    .menu01, .menu02 {display: none;}
+    .menuhide {display: flex;}
+    .form-register {width: 300px;}
+    .auth input,
+    .form-register p input,
+    .form-register p textarea {width: 96%;}
+    #flex {
+        display: inline;
+        width: 100%;
+        flex-direction: row;
+        padding-top: 20px;
+    }
+    #flex div {display: block; border: 1px solid #87909c; border-bottom: white; border-radius: 30px; margin-bottom: 40px;}
+    #flex img {width: 100%;}
+    #education>div {width: 80%;}
+    
+}

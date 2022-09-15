@@ -1,0 +1,1 @@
+from diplom.wsgi import application

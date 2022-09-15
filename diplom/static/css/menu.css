@@ -1,0 +1,65 @@
+.menu03 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    background: #BB2D3B;
+    height: 56px;
+    -webkit-box-shadow: 0px 7px 5px -5px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 7px 5px -5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 7px 5px -5px rgba(0, 0, 0, 0.6);
+}
+.logo-img {
+    height: 50px;
+}
+.menuUD {
+    font-size: 2.4em;
+    color: #ffffff;
+    line-height: 50px;
+}
+.nav_menu03 {
+    position: absolute;
+    background-color: #3D4852;
+    top:50px;
+    left:0;
+    width: 100%;
+}
+/* меню изначально скрыто */
+#showmenu {
+    list-style-type: none;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+/* пункты меню */
+.nav_menu03 ul li {
+    padding: 0 15px;
+}
+.user {
+    background: #ffa000;
+}
+/* ссылки меню */
+.nav_menu03 ul a li {
+    display: inline-block;
+    padding: 12px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    width: 100%;
+}
+/* наведение и выбор меню */
+.nav_menu03 ul a li:hover,
+.nav_menu03 ul a li:focus {
+    color: #ffa000;
+}
+#checkbox,
+.fa-angles-up {
+    display: none;
+}
+#checkbox:checked ~ #showmenu {
+    max-height: 350px;
+    transition: all 0.3s;
+}
+
+@media (min-width: 550px) {
+    .menu03 {display: none;}
+}

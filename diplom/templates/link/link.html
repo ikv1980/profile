@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+    <h1>
+      {{ title }}
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post" class="form-register" autocomplete="off">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn-success btnuser" type="submit">Создать ссылку</button>
+    </form>
+    
+    {% if links.count != 0 %}
+    <details>
+        <summary>Доступные ссылки:
+            <span id = "linkCount">{{ links.count }}</span>
+        </summary>
+        <p><i style="font-size: 14px;">(Нажмите на поле ссылки, чтобы скопировать её в буфер)</i></p>
+        <div id="links">
+            {% for el in links %}
+            <div class="link">
+                <p style="font-weight: 600;">
+                    <a href="{{ el.slug }}" target="_blank">/link/{{ el.slug }}/</a>
+                    <!-- Удаление ссылки через GET запрос -->
+                    <span id="delete" href="#" onclick="confirm_delete('{{el.id}}');" style="color: red;" title="Удалить ссылку"><i class="fa-solid fa-trash-can"></i></span>
+                    </tr>
+                    <span>"{{ el.title }}"</span>
+                </p>
+            </div>      
+            {% endfor %}
+        </div>
+    </details>
+    {% endif %}
+{% endblock %}
