@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'home.html', {'title':'Портфолио'})
+    return render(request, 'home.html', {'title':'Портфолио Иванова Константина'})
 
 def about(request):
     return render(request, 'about.html', {'title':'Резюме'})
