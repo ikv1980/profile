@@ -9,7 +9,7 @@ TYPE_ACCOUNT = (
 
 class Profile(models.Model):
     user = models.OneToOneField(User, verbose_name='Пользователь', on_delete=models.CASCADE)
-    img = models.ImageField('Фото пользователя', default='user.png', upload_to='user_images')
+    img = models.ImageField('Фото пользователя', default='user.webp', upload_to='user_images')
     agreement = models.BooleanField('Согласие на отправку уведомлений на почту', default=True)
     account_type = models.CharField(choices=TYPE_ACCOUNT, default='free', max_length=30)
 

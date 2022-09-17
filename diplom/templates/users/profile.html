@@ -10,7 +10,7 @@
     <div class="users">
         <div class="container">
             <img width="100" height="100" src="{{ user.profile.img.url }}">
-            <p><b>Логин:  </b>@{{ user.username }}</p>
+            <p><b>Логин:  </b><span id="logtest">@{{ user.username }}</span></p>
             <p><b>Статус: </b>
                 {% if user.is_staff %}
                     Администратор

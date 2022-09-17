@@ -8,6 +8,7 @@
 
 {% block content %}
     <div class="users">
+        <i>Тестовый доступ (логин/пароль: test)</i>
         <form method="post" class="form-register auth">
             {% csrf_token %}
             {{ form.as_p }}

@@ -20,10 +20,21 @@ $('#links div p').on("click", function() {
     navigator.clipboard.writeText(document.location.href + '' + url)
 })
 
-// Удаление информационных сообщений через 3 секунды
+// скрипты выполняемые при загрузке страницы
 $(document).ready(function(){
+    // Удаление информационных сообщений через 3 секунды
     $('.messages li.error').fadeOut(3000);
     $('.messages li.success').fadeOut(3000);
+    // Запрет изменений пользователя test
+    if ($("#logtest").text() == "@test")
+    {
+        $("#logtest").text("@test(редактирование запрещено)").css("color","red");
+        $("#id_username").prop("disabled", true);
+        $("#id_email").prop("disabled", true);
+        $("#id_img").prop("disabled", true);
+        $("#id_agreement").prop("disabled", true);
+        $(".btn-success").prop("disabled", "disabled");
+    }
 });
 
 // Запрос на удаление ссылки. Сделан через GET. Неправильно конечно, но пока пусть так.
@@ -33,7 +44,7 @@ function confirm_delete(id){
     }
 }
 
-// РАбота с картинками
+// Работа с картинками
 $(function(){
     $("a.colorbox").colorbox();
 });
