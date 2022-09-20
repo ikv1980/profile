@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}<h1>{{ title }}</h1>{% endblock %}}
+
+{% block content %}
+    <div class="container users">
+        <form method="post" class="form-register" autocomplete="off">
+            {% csrf_token %}
+            <h4 class="comment">Вы точно хотите удалить статью "{{ object.title }}"?</h4><br>
+            <button class="btn-danger btnuser" type="submit">{{ btn_text }}</button>
+            <a href="{% url 'news-detail' object.id %}">Нет, отмена</a>
+        </form>
+    </div>
+{% endblock %}
+

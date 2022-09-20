@@ -230,7 +230,6 @@ footer {
     font-weight: 300;
     font-style: italic;
 }
-
   
 .auth input,
 .form-register p input,
@@ -241,6 +240,7 @@ footer {
   border: 1px solid #ced4da;
   padding: .45rem .75rem;
   border-radius: .25rem;
+  resize: vertical;
 }
   
 .auth input:focus,
@@ -284,7 +284,6 @@ hr {
 }
 .link {
     font-size: 16px;
-    font-weight: 300px;
     text-align: start;
     margin: 2px;
 }
@@ -427,7 +426,6 @@ tbody {vertical-align: top;}
 /* Стили для Сертификатов - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 #education {
     display: flex;
-    /* width: 85%; */
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px 0px;
@@ -446,6 +444,60 @@ tbody {vertical-align: top;}
     max-width: 100%;
 }
 
+/* Стили для новостей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+#news_page {
+    width: 80%;
+    padding-top: 20px;
+}
+#news_page:first-of-type {text-align: end;}
+
+.news_div {
+    text-align: start;
+}
+
+.news_body {
+    background: #f5f5f5;
+    padding: 20px;
+    margin: 15px 0px;    
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+    text-align: start;
+}
+
+.news_body img {width: 60px; border-radius: 30px; margin-right: 10px;}
+
+.news_body div p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#news_page>.btn-success{
+    padding: 1px 5px;
+    color: #fff;
+    background-color: #157347;
+    border-color: #157347;
+    font-size: 16px;
+    margin: 2px;
+}
+
+#news_page>.btn-danger{
+    padding: 1px 5px;
+    font-size: 16px;
+    margin: 2px;
+}
+
+#news_user {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+    font-size: 13px;
+    font-style: italic;
+    color: gray;
+    margin: 5px 0px;
+}
+
+
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 @media(max-width: 1400px) {
@@ -462,6 +514,7 @@ tbody {vertical-align: top;}
     .menu02 a {margin: 0px 10px;}
     #flex div {border: 0px;}
     #education>div {width: 40%;}
+    #news_page {width: 90%;}
 }
 
 @media(max-width: 550px) {
@@ -480,5 +533,6 @@ tbody {vertical-align: top;}
     #flex div {display: block; border: 1px solid #87909c; border-bottom: white; border-radius: 30px; margin-bottom: 40px;}
     #flex img {width: 100%;}
     #education>div {width: 80%;}
+    #news_page {width: 100%;}
     
 }

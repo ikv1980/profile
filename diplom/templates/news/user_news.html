@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}<h1>{{ title }}</h1>{% endblock %}
+
+{% block content %}
+  <div id="news_page">
+    <!-- <div>
+      <a class="btn-success btnuser" href="{% url 'news-add' %}" title="Добавить новость"><i class="fa-solid fa-file-circle-plus"></i></a>
+    </div> -->
+
+    <p class="fs-3">Количество: <span class="badge bg-success">{{ page_obj.paginator.count }}</span></p>
+
+    {% for post in news %}
+      <div class="news_body">
+        <!-- Заголовок статьи -->
+        <h2>{{ post.title }}</h2>
+
+        <!-- Вставка картинки опционально -->
+        <!-- <img src="{{ post.img.url }}" align="left"> -->
+          
+        <!-- Текст статьи -->
+        <div>{{ post.text|striptags|truncatechars:240 }}
+          <a href="{% url 'news-detail' post.id %}"><b><i>(читать)</i></b></a>
+        </div>
+
+        <!-- О пользователе -->
+        <div id="news_user">
+          <div>
+            <img src="{{ post.avtor.profile.img.url }}" alt="{{ post.avtor }}" class="user_images">
+          </div>
+          <div>
+            <span class="text-muted">Публикация: {{ post.date|date:"d.m.Y (H:i)" }}</span>
+            <p><b>Автор:</b> <a href="{% url 'user-news' post.avtor %}">{{ post.avtor }}</a></p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    <!-- Кнопки навигации -->
+    {% if is_paginated %}
+      {% if page_obj.has_previous %}
+        <a href="?page=1" class="btn-danger btnuser">Начало</a>
+        <a href="?page={{ page_obj.previous_page_number }}" class="btn-danger btnuser"><i class="fa-solid fa-angles-left"></i></a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if num == page_obj.number %}
+          <a class="btn-success btnuser">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
+          <a href="?page={{ num }}" class="btn-danger btnuser">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="btn-danger btnuser"><i class="fa-solid fa-angles-right"></i></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="btn-danger btnuser">Последняя</a>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}
+
+
+
+
+
+<p class="fs-3">Количество: <span class="badge bg-success">{{ page_obj.paginator.count }}</span></p>
+<div>
+  <a class="btn-success btnuser" href="{% url 'news-add' %}" title="Добавить новость"><i class="fa-solid fa-file-circle-plus"></i></a>
+</div>

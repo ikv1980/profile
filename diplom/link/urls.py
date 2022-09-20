@@ -8,6 +8,5 @@ urlpatterns = [
     path('<str:short>/', views.GoToLink),
     # Удаление ссылки
     path('del_link/<link_id>/', views.delete_link),
-    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

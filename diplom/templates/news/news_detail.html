@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}<h1>{{ title }}</h1>{% endblock %}
+
+{% block content %}
+<div id="news_page">
+  <div class="news_div">
+    <a class="btn-warning btnuser" onclick="history.back();" title="Назад"><i class="fa-solid fa-arrow-left"></i></a>
+  </div>  
+
+  <div class="news_body">             
+    <!-- Текст статьи -->
+    <div>{{ object.text|safe }}</div>
+    <!-- О пользователе -->
+    <div id="news_user">
+      <div>
+        <img src="{{ object.avtor.profile.img.url }}" alt="{{ object.avtor }}" class="user_images">
+      </div>
+      <div>
+        <span class="text-muted">Публикация: {{ object.date|date:"d.m.Y (H:i)" }}</span>
+        <p><b>Автор:</b> <a href="{% url 'user-news' object.avtor %}">{{ object.avtor }}</a></p>
+      </div>
+    </div>
+    <div>
+      {% if object.avtor == user %}
+      <a href="{% url 'news-update' object.id %}" class="btn-success btnuser">Обновить</a>
+      <a href="{% url 'news-delete' object.id %}" class="btn-danger btnuser">Удалить</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

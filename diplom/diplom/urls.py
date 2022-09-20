@@ -15,5 +15,6 @@ urlpatterns = [
     # Подключение дополнительных моделей Django
     path('users/', include('users.urls')),  # Модуль коротких ссылок
     path('link/', include('link.urls')),    # Модуль пользователей
+    path('news/', include('news.urls')),    # Модуль новостей + комментарии
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

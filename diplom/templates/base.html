@@ -10,8 +10,9 @@
     <title>{{ title }}</title>
     <link rel="shortcut icon" type="image/png" href="../media/favicon.ico"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" type="text/css" href={% static 'css/colorbox.css' %}>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
     <meta name="yandex-verification" content="2cb041b826dda018"/>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
@@ -141,7 +142,6 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
 <!-- Скрипт для работы с картинками -->
 <script src="{% static 'js/jquery.colorbox-min.js' %}"></script>
-<link rel="stylesheet" type="text/css" href="../static/css/colorbox.css">
 <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
