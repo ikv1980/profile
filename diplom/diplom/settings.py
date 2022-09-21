@@ -26,6 +26,7 @@ INSTALLED_APPS = [
 	'users.apps.UsersConfig',
     'link.apps.LinkConfig',
     'news.apps.NewsConfig',
+    'diplom.apps.DiplomConfig',
 ]
 
 MIDDLEWARE = [

@@ -9,25 +9,12 @@
 {% block content %}
     <div id="education">
         <!-- Документация https://realadmin.ru/saytostroy/foto-zoom.html -->
-        <div>
-            <a class="colorbox" href="../media/sertificat/ItAutPython.webp"><img src="../media/sertificat/ItAutPython.webp"/></a><br>
-            <a href="https://coursera.org/share/ca5103f483f690967ca0050624d0c8cd" target="_blank">"Google IT Automation with Python" (Google)</a>
-        </div>
-
-        <div>
-            <a class="colorbox" href="../media/sertificat/ItSupport.webp"><img src="../media/sertificat/ItSupport.webp"/></a><br>
-            <a href="https://coursera.org/share/b9695116d4552dbca4376fd43ec1315c" target="_blank">Google IT Support (Google)</a>
-        </div>
-
-        <div>
-            <a class="colorbox" href="../media/sertificat/PhytonItProger.webp"><img src="../media/sertificat/PhytonItProger.webp"/></a><br>
-            <a href="https://itproger.com/view-diplom/898a6a2a4d59e0beb1fece7ad99f80ff/python" target="_blank">"Профессия Python разработчик" (itProger)</a>
-        </div>
-
-        <div>
-            <a class="colorbox" href="../media/sertificat/PhytonSteppik01.webp"><img src="../media/sertificat/PhytonSteppik01.webp"/></a><br>
-            <a href="https://coursera.org/share/ca5103f483f690967ca0050624d0c8cd" target="_blank">"Поколение Python": курс для начинающих (Steppik)</a>
-        </div>         
+        {% for i in educ %}
+            <div>
+                <a class="colorbox" href="{{ i.img.url }}"><img src="{{ i.img.url }}"/></a><br>
+                <a href="{{ i.url }}" target="_blank">{{ i.name }} ({{ i.company }})</a>
+            </div>
+        {% endfor%}  
     </div>
 {% endblock %}
 
